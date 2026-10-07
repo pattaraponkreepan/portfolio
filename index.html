@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pattarapon Kreepan - Software Developer & DevOps Enthusiast Portfolio and Resume. Computer Science graduate from Chiang Mai University.">
+  <meta name="author" content="Pattarapon Kreepan">
+  <title>Pattarapon Kreepan | Software Developer</title>
+
+  <!-- Color scheme declaration for modern browsers and FOUC prevention -->
+  <meta name="color-scheme" content="light dark">
+  <script>
+    try {
+      const storedTheme = localStorage.getItem("theme-override");
+      if (storedTheme) {
+        document.querySelector('meta[name="color-scheme"]').content = storedTheme;
+        document.documentElement.setAttribute('data-theme', storedTheme);
+      }
+    } catch (e) {}
+  </script>
+
+  <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Toast Notification Container -->
+  <div id="toast" class="toast" role="alert" aria-live="polite"></div>
+
+  <!-- Navigation Bar -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#hero" class="brand-logo" aria-label="Pattarapon Kreepan Home">
+        <span class="brand-badge">PK</span>
+        <span class="brand-text">Pattarapon<span class="brand-dot">.dev</span></span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Theme Toggle Button -->
+        <button id="themeToggle" class="theme-btn" aria-label="Toggle light or dark theme" title="Toggle theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Resume Download CTA in Header -->
+        <a href="../simple-resume/index.html" class="btn btn-outline btn-sm" title="View minimal 1:1 paper resume">
+          <span>Minimal Version</span>
+        </a>
+
+        <a href="assets/Pattarapon-Kreepan-Resume.pdf" class="btn btn-outline btn-sm header-resume-btn" target="_blank" download="Pattarapon-Kreepan-Resume.pdf">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span>Resume PDF</span>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="menuToggle" class="mobile-menu-btn" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero / Intro Section -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="status-badge">
+            <span class="status-indicator"></span>
+            <span>Available for Software Developer & DevOps Roles</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Pattarapon Kreepan</span>
+          </h1>
+          <p class="hero-subtitle">
+            Software Developer &amp; Cloud/DevOps Enthusiast
+          </p>
+
+          <p class="hero-bio">
+            Driven Computer Science graduate from Chiang Mai University with hands-on internship experience across DevOps, Back-End, and Front-End engineering. Motivated to develop high-impact practical solutions, automate resilient infrastructure, and scale modern web applications.
+          </p>
+
+          <!-- Quick Actions -->
+          <div class="hero-actions">
+            <a href="assets/Pattarapon-Kreepan-Resume.pdf" class="btn btn-primary" target="_blank" download="Pattarapon-Kreepan-Resume.pdf">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download Resume</span>
+            </a>
+            <a href="#projects" class="btn btn-secondary">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+              <span>View Projects</span>
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span>Contact Me</span>
+            </a>
+          </div>
+
+          <!-- Quick Connect Pills -->
+          <div class="quick-links">
+            <a href="https://github.com/pattaraponkreepan" target="_blank" rel="noopener noreferrer" class="quick-pill github-pill" title="View GitHub Profile">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+              <span>github.com/pattaraponkreepan</span>
+            </a>
+
+            <button class="quick-pill copy-btn" data-copy="pattarapon.kreepan@gmail.com" title="Click to copy email">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span>pattarapon.kreepan@gmail.com</span>
+              <span class="copy-badge">Copy</span>
+            </button>
+
+            <button class="quick-pill copy-btn" data-copy="0824358490" title="Click to copy phone number">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <span>082-435-8490</span>
+              <span class="copy-badge">Copy</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Profile Avatar & Tech Card -->
+        <div class="hero-visual">
+          <div class="avatar-card">
+            <div class="avatar-wrapper">
+              <img src="assets/profile.jpg" alt="Pattarapon Kreepan Portrait" class="avatar-img" width="340" height="420" loading="eager">
+              <div class="avatar-glow"></div>
+            </div>
+            <div class="avatar-footer">
+              <div class="avatar-footer-info">
+                <strong>Pattarapon Kreepan</strong>
+                <span>CS • Chiang Mai University (GPA 2.99)</span>
+              </div>
+              <div class="avatar-footer-chip">
+                <span>Chiang Mai, TH 🇹🇭</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Metrics / Highlights Bar -->
+    <section class="metrics-section">
+      <div class="container">
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-num">3</div>
+            <div class="metric-label">Professional Internships (DevOps, Backend, Frontend)</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-num">B.Sc.</div>
+            <div class="metric-label">Computer Science Graduate (CAMT, CMU)</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-num">10+</div>
+            <div class="metric-label">Modern Tech Stack &amp; Cloud Tools</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-num">100%</div>
+            <div class="metric-label">Dedicated to Practical Problem Solving &amp; Growth</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Career Journey</span>
+          <h2 class="section-title">Work Experience</h2>
+          <p class="section-subtitle">Real-world engineering experience across DevOps, Backend systems, and Frontend applications.</p>
+        </div>
+
+        <div class="timeline">
+          <!-- Item 1: DevOps -->
+          <div class="timeline-item">
+            <div class="timeline-dot devops-dot"></div>
+            <div class="timeline-card">
+              <div class="card-header-flex">
+                <div>
+                  <span class="badge badge-devops">DevOps Engineering</span>
+                  <h3 class="role-title">DevOps Engineer Internship</h3>
+                  <div class="company-name">Professional Tech Team</div>
+                </div>
+                <div class="timeline-date">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  <span>June 2025 – March 2026</span>
+                </div>
+              </div>
+              <ul class="bullet-list">
+                <li>
+                  <strong>Observability &amp; Telemetry:</strong> Implemented end-to-end observability solutions using <em>OpenTelemetry</em> to enhance real-time monitoring and microservice visibility.
+                </li>
+                <li>
+                  <strong>Cloud Storage &amp; Archival:</strong> Configured automated <em>CloudWatch Logs</em> backup to <em>Amazon S3</em> for long-term log retention and archival compliance.
+                </li>
+                <li>
+                  <strong>CI/CD Optimization:</strong> Automated dependency cache downloading, pipeline health checks, and failure resolution in <em>Jenkins</em> pipelines to speed up builds and stabilize deployments.
+                </li>
+                <li>
+                  <strong>Cloud Deployment:</strong> Deployed the <em>AI SA MOM</em> project onto <em>AWS Elastic Beanstalk</em>, managing environment configurations, runtime provisioning, and stability.
+                </li>
+              </ul>
+              <div class="tech-tags">
+                <span class="tech-tag">OpenTelemetry</span>
+                <span class="tech-tag">AWS Elastic Beanstalk</span>
+                <span class="tech-tag">Amazon S3</span>
+                <span class="tech-tag">AWS CloudWatch</span>
+                <span class="tech-tag">Jenkins</span>
+                <span class="tech-tag">Docker</span>
+                <span class="tech-tag">CI/CD</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: Backend -->
+          <div class="timeline-item">
+            <div class="timeline-dot backend-dot"></div>
+            <div class="timeline-card">
+              <div class="card-header-flex">
+                <div>
+                  <span class="badge badge-backend">Back-End Engineering</span>
+                  <h3 class="role-title">Back-End Developer Internship</h3>
+                  <div class="company-name">Software Engineering Team</div>
+                </div>
+                <div class="timeline-date">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  <span>February 2025 – March 2025</span>
+                </div>
+              </div>
+              <ul class="bullet-list">
+                <li>
+                  <strong>System Architecture:</strong> Gained deep understanding of backend engineering workflows, database schemas, and microservice communication patterns.
+                </li>
+                <li>
+                  <strong>Mock Data &amp; Testing:</strong> Prepared realistic mock datasets and API testing routines to support test-driven development, automated testing, and comprehensive feature validation.
+                </li>
+                <li>
+                  <strong>API Collaboration:</strong> Collaborated with cross-functional teams to verify contract definitions and endpoints using Postman and SQL.
+                </li>
+              </ul>
+              <div class="tech-tags">
+                <span class="tech-tag">Java</span>
+                <span class="tech-tag">SQL</span>
+                <span class="tech-tag">Postman</span>
+                <span class="tech-tag">REST APIs</span>
+                <span class="tech-tag">System Architecture</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3: Frontend -->
+          <div class="timeline-item">
+            <div class="timeline-dot frontend-dot"></div>
+            <div class="timeline-card">
+              <div class="card-header-flex">
+                <div>
+                  <span class="badge badge-frontend">Front-End Engineering</span>
+                  <h3 class="role-title">Front-End Developer Internship</h3>
+                  <div class="company-name">Web Development Team</div>
+                </div>
+                <div class="timeline-date">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  <span>December 2024 – January 2025</span>
+                </div>
+              </div>
+              <ul class="bullet-list">
+                <li>
+                  <strong>Component Delivery:</strong> Partnered closely with senior frontend developers to deliver responsive, reusable user interface components tailored to project specifications.
+                </li>
+                <li>
+                  <strong>Web Standards:</strong> Mastered modern front-end structure, state management workflows, responsive layouts, and cross-browser consistency in web-based applications.
+                </li>
+              </ul>
+              <div class="tech-tags">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">JavaScript (ES6+)</span>
+                <span class="tech-tag">HTML5 &amp; CSS3</span>
+                <span class="tech-tag">Git</span>
+                <span class="tech-tag">UI/UX Components</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="projects" class="section bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Selected Works</span>
+          <h2 class="section-title">Projects &amp; Research</h2>
+          <p class="section-subtitle">Highlights from university research and international collaborative hackathons.</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: Senior Research -->
+          <div class="project-card">
+            <div class="project-card-top">
+              <div class="project-category">Senior Research Project • Chiang Mai University</div>
+              <h3 class="project-name">Observability in Microservice Deployment Using OpenTelemetry</h3>
+              <p class="project-desc">
+                An in-depth research and engineering implementation focusing on distributed systems monitoring. Designed telemetry architectures to collect traces, metrics, and logs across hybrid environments for actionable performance analysis.
+              </p>
+            </div>
+
+            <div class="project-details">
+              <div class="project-detail-item">
+                <div class="detail-icon">🔬</div>
+                <div class="detail-text">
+                  <strong>Research &amp; Strategy:</strong> Investigated OpenTelemetry standards for trace collection and distributed context propagation in containerized microservices.
+                </div>
+              </div>
+              <div class="project-detail-item">
+                <div class="detail-icon">☁️</div>
+                <div class="detail-text">
+                  <strong>Cloud &amp; On-Premises:</strong> Conducted deployment, benchmarking, and load testing on both on-premises clusters and cloud services (AWS EC2, Amazon EKS).
+                </div>
+              </div>
+              <div class="project-detail-item">
+                <div class="detail-icon">📊</div>
+                <div class="detail-text">
+                  <strong>Telemetry Visibility:</strong> Evaluated telemetry pipelines across unified logs, metrics, and distributed traces to pinpoint bottlenecks and optimize service latency.
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card-footer">
+              <div class="tech-tags">
+                <span class="tech-tag">OpenTelemetry</span>
+                <span class="tech-tag">Kubernetes (EKS)</span>
+                <span class="tech-tag">AWS EC2</span>
+                <span class="tech-tag">Microservices</span>
+                <span class="tech-tag">Distributed Tracing</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Smart Farm Hackathon -->
+          <div class="project-card">
+            <div class="project-card-top">
+              <div class="project-category">International Hackathon • Inha University &amp; K-CAMT</div>
+              <h3 class="project-name">SMART FARM (Smart Aquaponics System)</h3>
+              <p class="project-desc">
+                An innovative eco-friendly IoT aquaponics system developed during the K-CAMT Winter Hackathon with Inha University (South Korea). Creates a self-sustaining ecosystem combining automated aquaculture and hydroponic agriculture.
+              </p>
+            </div>
+
+            <div class="project-details">
+              <div class="project-detail-item">
+                <div class="detail-icon">🐟</div>
+                <div class="detail-text">
+                  <strong>Circular Ecosystem:</strong> Integrated a fish tank and hydroponic planter where natural fish wastewater is repurposed as rich organic fertilizer for plants.
+                </div>
+              </div>
+              <div class="project-detail-item">
+                <div class="detail-icon">💧</div>
+                <div class="detail-text">
+                  <strong>Automated Irrigation:</strong> Programmed sensor-driven automated irrigation cycles drawing water directly from the aquatic habitat.
+                </div>
+              </div>
+              <div class="project-detail-item">
+                <div class="detail-icon">⚡</div>
+                <div class="detail-text">
+                  <strong>Automated Refill:</strong> Engineered level-detection automation for reliable water replenishment to preserve optimal aquatic life conditions.
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card-footer">
+              <div class="tech-tags">
+                <span class="tech-tag">Smart Aquaponics</span>
+                <span class="tech-tag">IoT Automation</span>
+                <span class="tech-tag">Embedded Logic</span>
+                <span class="tech-tag">Hardware-Software Integration</span>
+                <span class="tech-tag">Global Collaboration</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Skills Section -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Core Competencies</span>
+          <h2 class="section-title">Technical Skills &amp; Stack</h2>
+          <p class="section-subtitle">Technologies, frameworks, and tooling I utilize to design, build, and deploy software.</p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Skill Category 1 -->
+          <div class="skill-group">
+            <div class="skill-group-header">
+              <div class="skill-icon-box devops-icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="skill-group-title">Cloud &amp; DevOps</h3>
+                <span class="skill-group-caption">Infrastructure, Containerization &amp; CI/CD</span>
+              </div>
+            </div>
+            <div class="skill-items">
+              <div class="skill-badge"><span class="badge-dot"></span>AWS Management (EC2, EKS, S3, Beanstalk, CloudWatch)</div>
+              <div class="skill-badge"><span class="badge-dot"></span>Docker &amp; Containers</div>
+              <div class="skill-badge"><span class="badge-dot"></span>Kubernetes (K8s / EKS)</div>
+              <div class="skill-badge"><span class="badge-dot"></span>Terraform (IaC)</div>
+              <div class="skill-badge"><span class="badge-dot"></span>Jenkins Pipelines</div>
+              <div class="skill-badge"><span class="badge-dot"></span>OpenTelemetry (Traces, Metrics, Logs)</div>
+            </div>
+          </div>
+
+          <!-- Skill Category 2 -->
+          <div class="skill-group">
+            <div class="skill-group-header">
+              <div class="skill-icon-box backend-icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="skill-group-title">Backend &amp; Database</h3>
+                <span class="skill-group-caption">Server Logic &amp; Data Persistence</span>
+              </div>
+            </div>
+            <div class="skill-items">
+              <div class="skill-badge"><span class="badge-dot"></span>Java</div>
+              <div class="skill-badge"><span class="badge-dot"></span>SQL &amp; Relational Databases</div>
+              <div class="skill-badge"><span class="badge-dot"></span>RESTful API Design</div>
+              <div class="skill-badge"><span class="badge-dot"></span>Postman &amp; API Testing</div>
+              <div class="skill-badge"><span class="badge-dot"></span>Mock Data &amp; Validation</div>
+            </div>
+          </div>
+
+          <!-- Skill Category 3 -->
+          <div class="skill-group">
+            <div class="skill-group-header">
+              <div class="skill-icon-box frontend-icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <div>
+                <h3 class="skill-group-title">Frontend &amp; Web</h3>
+                <span class="skill-group-caption">Client-Side User Experience</span>
+              </div>
+            </div>
+            <div class="skill-items">
+              <div class="skill-badge"><span class="badge-dot"></span>React</div>
+              <div class="skill-badge"><span class="badge-dot"></span>JavaScript (ES6+)</div>
+              <div class="skill-badge"><span class="badge-dot"></span>HTML5 &amp; Semantic Web</div>
+              <div class="skill-badge"><span class="badge-dot"></span>Modern CSS / Flexbox / Grid</div>
+              <div class="skill-badge"><span class="badge-dot"></span>Responsive Web Design</div>
+            </div>
+          </div>
+
+          <!-- Skill Category 4 -->
+          <div class="skill-group">
+            <div class="skill-group-header">
+              <div class="skill-icon-box tools-icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="skill-group-title">Tooling &amp; Languages</h3>
+                <span class="skill-group-caption">Productivity &amp; Communication</span>
+              </div>
+            </div>
+            <div class="skill-items">
+              <div class="skill-badge"><span class="badge-dot"></span>Git &amp; GitHub Version Control</div>
+              <div class="skill-badge"><span class="badge-dot"></span>Linux / Bash Environment</div>
+              <div class="skill-badge"><span class="badge-dot"></span>VS Code &amp; JetBrains IDEs</div>
+              <div class="skill-badge"><span class="badge-dot"></span>Thai (Native)</div>
+              <div class="skill-badge"><span class="badge-dot"></span>English (Professional Working)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Academic Background</span>
+          <h2 class="section-title">Education</h2>
+          <p class="section-subtitle">Solid theoretical foundation in Computer Science and software engineering fundamentals.</p>
+        </div>
+
+        <div class="education-card">
+          <div class="edu-icon-col">
+            <div class="edu-icon-badge">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="edu-content-col">
+            <div class="edu-header">
+              <div>
+                <h3 class="edu-degree">Bachelor of Science in Computer Science</h3>
+                <div class="edu-faculty">College of Arts, Media and Technology (CAMT)</div>
+                <div class="edu-institution">Chiang Mai University (มหาวิทยาลัยเชียงใหม่)</div>
+              </div>
+              <div class="edu-badge-gpa">
+                <span class="gpa-label">Cumulative GPA</span>
+                <span class="gpa-val">2.99</span>
+              </div>
+            </div>
+            <div class="edu-details-text">
+              <p>
+                Graduated with focused studies on microservices architectures, telemetry data engineering, automated infrastructure provisioning, and full-stack software delivery. Completed senior research focused on distributed system observability using OpenTelemetry.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Connect Section -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="contact-box">
+          <div class="contact-header">
+            <span class="section-tag">Get In Touch</span>
+            <h2 class="section-title">Let's Connect &amp; Collaborate</h2>
+            <p class="section-subtitle">I am actively seeking Software Developer, Back-End, and DevOps Engineer opportunities. Feel free to reach out directly!</p>
+          </div>
+
+          <div class="contact-methods">
+            <!-- Email -->
+            <div class="contact-card">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="contact-info">
+                <div class="contact-label">Email</div>
+                <a href="mailto:pattarapon.kreepan@gmail.com" class="contact-value">pattarapon.kreepan@gmail.com</a>
+              </div>
+              <button class="btn btn-sm btn-outline copy-btn" data-copy="pattarapon.kreepan@gmail.com">
+                <span>Copy</span>
+              </button>
+            </div>
+
+            <!-- Phone -->
+            <div class="contact-card">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div class="contact-info">
+                <div class="contact-label">Phone</div>
+                <a href="tel:0824358490" class="contact-value">082-435-8490</a>
+              </div>
+              <button class="btn btn-sm btn-outline copy-btn" data-copy="0824358490">
+                <span>Copy</span>
+              </button>
+            </div>
+
+            <!-- GitHub -->
+            <div class="contact-card">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+              </div>
+              <div class="contact-info">
+                <div class="contact-label">GitHub</div>
+                <a href="https://github.com/pattaraponkreepan" target="_blank" rel="noopener noreferrer" class="contact-value">github.com/pattaraponkreepan</a>
+              </div>
+              <a href="https://github.com/pattaraponkreepan" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                <span>Visit</span>
+              </a>
+            </div>
+
+            <!-- Resume Download -->
+            <div class="contact-card resume-card">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+              </div>
+              <div class="contact-info">
+                <div class="contact-label">Official Resume</div>
+                <div class="contact-value">Pattarapon Kreepan-Resume-dev.pdf</div>
+              </div>
+              <a href="assets/Pattarapon-Kreepan-Resume.pdf" class="btn btn-sm btn-primary" target="_blank" download="Pattarapon-Kreepan-Resume.pdf">
+                <span>Download</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <span class="footer-logo">Pattarapon Kreepan</span>
+        <span class="footer-copy">&copy; 2026 • Crafted with Modern Web Standards</span>
+      </div>
+      <div class="footer-right">
+        <a href="#hero" class="back-to-top" title="Scroll back to top">
+          <span>Back to Top</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

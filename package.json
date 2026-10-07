@@ -1,0 +1,18 @@
+{
+  "name": "pattarapon-portfolio",
+  "version": "1.0.0",
+  "description": "Pattarapon Kreepan - Resume & Portfolio Website",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve . -l 3000",
+    "dev": "npx serve . -l 3000"
+  },
+  "keywords": [
+    "portfolio",
+    "resume",
+    "software-developer",
+    "devops"
+  ],
+  "author": "Pattarapon Kreepan",
+  "license": "MIT"
+}
